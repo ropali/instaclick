@@ -36,11 +36,11 @@ const upload = multer({
 
 
 // GET login page
-router.get('/users/login', userController.get_login_page);
+router.get('/login', userController.get_login_page);
 
 
 // Check login credentials
-router.post('/users/login', userController.login);
+router.post('/login', userController.login);
 
 // Logout user
 router.get('/logout', userController.logout);
