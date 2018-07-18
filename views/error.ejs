@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <title>InstaClick - Home</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <p class="text-center brand-name">InstaClick</p>
+        <div class="row">
+
+
+            <div class="col-md-4 col-md-offset-4 login-form">
+                <!-- LOGIN AND SIGNUP BUTTONS -->
+                <div class="button-menu">
+                    <button class="login big-btn btn btn-success btn-block" id="login">Login</button>
+                    <button class="signup big-btn btn btn-info btn-block" id="signup">Sign up</button>
+                </div>
+
+
+                <div class="jumbotron" id="login-form">
+
+                    <% if(error) {%>
+                        <div class="bg-danger">
+                            <ul>
+                                <% for(var i=0; i < error.length; i++) { %>
+
+                                    <li>
+                                        <%= error[i].msg %>
+                                    </li>
+
+                                    
+                                    <% } %>
+                            </ul>
+                        </div>
+                        <% } %>
+
+                            
+                </div>
+
+                <div class="jumbotron" id="signup-form">
+                    <% if(error) {%>
+                        <div class="bg-danger">
+                            <ul>
+                                <% for(var i=0; i < error.length; i++) { %>
+
+                                    <li>
+                                        <%= error[i].msg %>
+                                    </li>
+
+
+                                    <% } %>
+                            </ul>
+                        </div>
+                        <% } %>
+
+                           
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="row" id="footer">
+            <footer>
+                <p>InstaClick - A photo sharing website. Created By RopAli Munshi</p>
+
+            </footer>
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap JS -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/login.js"></script>
+</body>
+
+</html>

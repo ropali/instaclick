@@ -1,0 +1,56 @@
+
+.comment-panel{
+    display: none;
+    margin-top: -15px;
+}
+
+.user-comments{
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.comment-area{
+    margin-left: -30px;
+    resize: none;
+    border-radius: 1em;
+    
+}
+
+#comment-btn{
+    margin-top: 4px;
+    
+}
+
+.comment-user-img{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#btn-write-comment{
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+
+.post-time{
+    font-size: 12px;
+    font-weight: lighter;
+    
+}
+
+.post-comment{
+    white-space: normal;
+}
+
+.comment-user{
+    font-style: normal;
+    
+}
+
+.comment-user > a{
+    text-decoration: none;
+}
+
+textarea{
+    padding: 2px;
+}

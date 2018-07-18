@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <span>
+            <img src=<%=user.profile %> width="50%" class="img img-circle img-responsive center-block" alt="" />
+        </span>
+        <div class="user-profile-name">
+            <p class="text-primary"> -
+                <%= user.fullName %> - </p>
+            <q class="text-muted">
+                <%= user.bio %>
+            </q>
+            <br>
+            <br>
+            <a href="/users/edit-profile" class="btn btn-success btn-block">Edit Profile</a>
+        </div>
+    </div>
+</div>

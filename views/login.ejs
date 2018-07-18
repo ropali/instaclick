@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <title>InstaClick - Home</title>
+</head>
+
+<body>
+    
+
+    <div class="container">
+        <p class="text-center brand-name">InstaClick</p>
+        <div class="row">
+
+
+            <div class="col-md-4 col-md-offset-4 login-form">
+                <!-- LOGIN AND SIGNUP BUTTONS -->
+                <div class="button-menu">
+                    <button class="login big-btn btn btn-success btn-block" id="login">Login</button>
+                    <button class="signup big-btn btn btn-info btn-block" id="signup">Sign up</button>
+                </div>
+
+
+                <div class="jumbotron" id="login-form">
+
+                    <form class="form-signin" method="POST" action="/users/login">
+                        <div class="bg-danger" id="login-error">
+                            <p class="text-danger"  style="padding: 10px;font-size:16px;display: none">Username or password is wrong!!!</p>
+                        </div>
+                        <h2 class="form-signin-heading ">Please sign in</h2>
+
+                        <label for="email" class="sr-only">Email address</label>
+                        <input type="email" id="login-email" class="form-control" name="email" placeholder="Email address" required autofocus>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" name="password" id="login-password" class="form-control" placeholder="Password" required>
+                        
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" id="submit-login">Login</button>
+                    </form>
+                </div>
+
+                <div class="jumbotron" id="signup-form">
+                    
+                    <form class="form-signin" method="POST" action="/users/signup">
+                        <div class="bg-danger" id="signup-error">
+                            <p class="text-danger" style="padding: 10px;font-size:16px;display: none">Username or password is wrong!!!</p>
+                        </div>
+                        <h2 class="form-signin-heading ">Please sign up</h2>
+
+                        <label for="inputPassword" class="sr-only">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Full Name" required>
+                        
+                        
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" name="pass1" class="form-control" placeholder="Password" required>
+
+                        <label for="inputPassword" class="sr-only">Confrim Password</label>
+                        <input type="password" id="inputPassword2" name="pass2" class="form-control" placeholder="Confirm Password" required>
+                        
+                        <div class="checkbox">
+                            <label>
+                                <input type="radio" value="male" name="gender"> <i class="fa fa-male fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" value="female" name="gender" ><i class="fa fa-female fa-lg" aria-hidden="true"></i>
+                            </label>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block" id="submit-signup" type="submit">Sign Up</button>
+                    </form>
+                </div>
+
+            </div>
+
+            
+        </div>
+
+        <div class="row" id="footer">
+            <footer>
+                <p>InstaClick - A photo sharing website. Created By RopAli Munshi</p>
+                
+            </footer>
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap JS -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/login.js"></script>
+</body>
+
+</html>

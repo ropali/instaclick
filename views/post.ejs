@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/post.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <title>InstaClick - Home</title>
+</head>
+
+<body>
+    <% include partials/navbar%>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="text-center">Filters</h3>
+
+                    <div class="row text-center" style="margin-bottom: 20px">
+                        <div class="col-xs-6">
+                            <div class="btn-group btn-group-sm btn-block" role="group" aria-label="">
+                                <button type="button" class="btn btn-primary filter-btn brightness-remove">-</button>
+                                <button type="button" class="btn btn-default filter-btn">Brightness</button>
+                                <button type="button" class="btn btn-primary filter-btn brightness-add">+</button>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="btn-group btn-group-sm btn-block" role="group" aria-label="">
+                                <button type="button" class="btn btn-primary filter-btn contrast-remove">-</button>
+                                <button type="button" class="btn btn-default filter-btn">Contrast</button>
+                                <button type="button" class="btn btn-primary filter-btn contrast-add">+</button>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="row text-center" style="margin-bottom: 20px">
+                        <div class="col-xs-6">
+                            <div class="btn-group btn-group-sm btn-block" role="group" aria-label="">
+                                <button type="button" class="btn btn-primary filter- saturation-remove">-</button>
+                                <button type="button" class="btn btn-default filter-btn">Saturation</button>
+                                <button type="button" class="btn btn-primary filter-btn saturation-add">+</button>
+                            </div>
+                    
+                        </div>
+                    
+                        <div class="col-xs-6">
+                            <div class="btn-group btn-group-sm btn-block" role="group" aria-label="">
+                                <button type="button" class="btn btn-primary filter-btn vibrance-remove">-</button>
+                                <button type="button" class="btn btn-default filter-btn">Vibrance</button>
+                                <button type="button" class="btn btn-primary filter-btn vibrance-add">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-center">Effects</h3>
+                    <div class="row" style="margin-bottom: 10px">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects vintage">Vintage</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects lomo">Lomo</button>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row" style="margin-bottom: 10px">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects clarity">Clarity</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects sin-city">Sin City</button>
+                        </div>
+                    
+                    </div>
+
+                    <div class="row" style="margin-bottom: 10px">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects cross-process">Cross Process</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects pinhole">Pinhole</button>
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="row text-center" style="margin-bottom: 10px">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects nostalgia">Nostalgia</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects her-majesty">Her Majesty</button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row text-center" style="margin-bottom: 10px">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects greyscale">Greyscale</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-info btn-block effects invert">Invert</button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="bg-info msg" id="profile-edit-success" >
+                        <span class="text-primary" id="success-msg">Image Posted Successfully...</span>
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="bg-danger msg" id="profile-edit-error">
+                        <span class="text-danger" id="error-msg"></span>
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="file-upload">
+                        <label for="file-upload" class="custom-file-label">Choose Image</label>
+                    </div>
+
+                    <canvas id="canvas"></canvas>
+
+                    <div class="row" style="margin-bottom: 20px">
+                        <div class="col-md-6">
+                            <button class="btn btn-success btn-block" id="post-image">Post Image</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-danger btn-block" id="remove-filters">Remove Filters</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-2"></div> 
+            </div>
+        </div>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <script src="/javascripts/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+        <script src="/javascripts/image-filter.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <title>InstaClick - Home</title>
+</head>
+
+<body>
+    <% include partials/navbar%>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- PROFILE -->
+                    <% include partials/profile%>
+
+
+                </div>
+                <div class="col-md-6">
+                    
+                    <!-- Users Posts Here -->
+                    <div class="row">
+                        <% if(posts) {%>
+                            <% for(var i=0; i < posts.length; i++) { %>
+
+                                <!-- FEEDS -->
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="question-panel clearfix">
+
+                                            <div class="row user-row">
+                                                <div class="col-xs-2">
+                                                    <img src=<%=posts[i].user.profile %> class="img img-circle" id="user-img" width="50%" alt="">
+                                                </div>
+                                                <div class="col-xs-10 user-name-div">
+                                                    <span class="text-muted">
+                                                        <a href="user-name">
+                                                            <%= posts[i].user.username %>
+                                                        </a>
+                                                        <span class="pull-right" style="margin-right:-40px">
+                                                            <i class="post-time">
+                                                                <%= posts[i].timestamp %>
+                                                            </i>
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- POST IMAGE -->
+                                            <div class="row">
+                                                <div class="col-xs-12 img-container" id="">
+                                                    <div class="post-imgage">
+                                                        <img src="/<%=posts[i].imageUrl %>" class="" id="post-image" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Comment Sections -->
+                                            <div class="row comment-div">
+                                                <div class="col-xs-12">
+                                                    <div class="row">
+                                                        <!-- <label for="likes">❤</label> -->
+
+                                                        <span class="likes" data-postid="<%= posts[i]._id %>">
+                                                            <i class="fa fa-heart fa-lg" aria-hidden="true"></i>
+                                                        </span>
+
+                                                        <span class="text-muted like-counter counter">
+                                                            <%= posts[i].likes %>
+                                                        </span>
+                                                        <span class="comments" style="margin-left: 40px">
+                                                            <a href="/post/comments/<%= posts[i]._id %>" class="comment_link">
+                                                                <i class="fa fa-comment-o fa-lg" aria-hidden="true"></i>
+                                                            </a>
+                                                        </span>
+                                                        <span class="text-muted counter">
+                                                            <i>
+                                                                <%= posts[i].comments %>
+                                                            </i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ FEEDS -->
+
+
+                                <% } %>
+
+
+                                    <% } %>
+                    </div>
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <script src="/javascripts/bootstrap.min.js"></script>
+        <script src="/javascripts/main.js"></script>
+        <script src="/javascripts/timeago.js"></script>
+
+
+</body>
+
+</html>

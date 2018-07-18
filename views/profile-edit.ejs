@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
+
+    <title>InstaClick - Edit Profile</title>
+</head>
+
+<body>
+    <% include partials/navbar%>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="bg-danger msg" id="profile-edit-error">
+                        <span  class="text-danger" id="error-msg"></span>
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-body user-profile">
+                            <div class="row text-center">
+                                <img src=<%= user.profile %> id="user-img" class="img user-img img-thumbnail" width="40%">
+
+                                
+                                <form action="/users/edit-profile" name="update-form" method="POST" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="img-upload" class="custom-file-upload">Choose Image</label>
+                                        <input type="file" name="profile_img" id="img-upload">
+                                    
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bio" class="pull-left">Update Your Bio
+                                            <span class="text-muted" id="text_counter">(Max Characters : 150)</span>
+                                        </label>
+                                        <textarea name="bio" class="form-control" id="bio" cols="30" rows="5" ><%= user.bio %></textarea>
+                                    </div>
+
+                                    <button type="button" id="update-profile" class="btn btn-block btn-success">Change</button>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Image Cropping Model -->
+
+        
+
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+
+            <script src="/javascripts/bootstrap.min.js"></script>
+            <script src="/javascripts/edit-profile.js"></script>
+
+            
+        </body>
+
+</html>

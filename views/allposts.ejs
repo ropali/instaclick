@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <title>InstaClick - Home</title>
+</head>
+
+<body>
+    <% include partials/navbar%>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- PROFILE -->
+                    <% include partials/profile%>
+                
+                
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <% if(posts){ %>
+                            <% for(i = 0;i < posts.length;i++){ %>
+                                <div class="col-md-3 photo">
+                                    <img src="/<%= posts[i].imageUrl %>" class="img img-thumbnail" alt="">
+                            
+                                </div>
+                                <% } %>
+                        <% } %>
+                    </div>
+                
+                </div>
+                <!-- <div class="col-md-2"></div> -->
+            </div>
+        </div>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <script src="/javascripts/bootstrap.min.js"></script>
+        
+        
+
+
+</body>
+
+</html>

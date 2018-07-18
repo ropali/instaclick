@@ -1,0 +1,29 @@
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-label {
+    background-color: #e20955;
+    border: 1px solid #e20955;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    color: white
+}
+
+#canvas{
+  margin: auto;
+  background: #ececec;
+  width: 100%;
+  
+}
+
+.render-btn{
+    background-color: #E69751;
+}
+
+.filter-btn :hover{
+    background-color: #E69751;
+}
