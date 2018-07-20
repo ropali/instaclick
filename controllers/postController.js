@@ -71,10 +71,15 @@ exports.get_comments_page = (req, res, next) => {
         Comment.find({ postid: postId }, (err, comments) => {
             if (err) {
                 console.log(err);
-
             }
-            console.log(comments);
-            res.render('comments-page', { post: post, comments: comments });
+
+            User.findById({ _id: req.session.userId }, (err, user) => {
+                if(err) console.log(err);
+                console.log(user);
+                res.render('comments-page', { post: post, comments: comments, user: user });
+
+            }).select('profile');
+            
         });
     });
 };
@@ -165,7 +170,8 @@ exports.get_all_posts = (req, res, next) => {
                 return res.status(500).send('Internal error');
             }
 
-
+            
+            
             res.render('allposts', { user: user, posts: posts });
         }).select('_id user.id imageUrl');
 

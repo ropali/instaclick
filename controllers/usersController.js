@@ -166,7 +166,8 @@ exports.get_settings_page = (req, res, next) => {
             console.log(err);
             return res.status(500).send({ success: false, msg: 'Internal error!' });
         }
-
+        
+        
         res.render('settings', { user: user });
 
     }).select('_id profile fullName bio email gender');
