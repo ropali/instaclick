@@ -1,5 +1,6 @@
 const Post = require('../models/post');
 const User = require('../models/User');
+const Comment = require('../models/comment');
 const fs = require('fs');
 
 exports.get_posts_page = (req, res, next) => {
