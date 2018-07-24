@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 
 const MongoStore = require('connect-mongo')(expressSession);
 
-mongoose.connect('mongodb://test:test123@ds261660.mlab.com:61660/insta_click');
+mongoose.connect('mongodb://YOUR_MONGODB_USERNAME:MONGODB_PASSWORD@ds261660.mlab.com:61660/insta_click');
 
 
 var indexRouter = require('./routes/index');
